@@ -1,27 +1,186 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn how to streamline your user registration process with our comprehensive onboarding guide.">
   <meta name="keywords" content="registration, onboarding, user registration, onboarding guide, user experience">
   <meta name="author" content="Frizzar">
   <meta name="robots" content="index, follow">
   <title>Registration Onboarding - Frizzar</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1></h1>
-  </header>
-  <main>
-    <div>
+  <ul class="nav nav-pills mb-3">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="pill" href="#step1">
+        <div class="icon d-flex align-items-center">
+          <i class="bi bi-scissors"></i>
+          <div class="d-flex flex-column gap-1">
+            <p>Cadastro de Serviços</p>
+            <span>Preencha as informações</span>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#step2">
+        <div class="icon d-flex align-items-center">
+          <i class="bi bi-people-fill"></i>
+          <div class="d-flex flex-column gap-1">
+            <p>Cadastro de Profissionais</p>
+            <span>Preencha as informações</span>
+          </div>
+        </div>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="pill" href="#step3">
+        <div class="icon d-flex align-items-center">
+          <i class="bi bi-check-lg"></i>
+          <div class="d-flex flex-column gap-1">
+            <p>Conclusão do Cadastro</p>
+            <span>Preencha as informações</span>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="step1">
+      <h2>Cadastrar Serviços</h2>
+      <div class="d-flex align-items-end gap-3">
+        <div class="">
+          <label for="servicos" class="form-label">Selecionar categoria</label>
+          <select class="form-select">
+            <option selected disabled>Categoria</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+
+        <div class="">
+          <label for="servicos" class="form-label">Selecionar serviços</label>
+          <select class="form-select">
+            <option selected disabled>Serviços</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+
+        <button type="button" class="btn-service" data-bs-toggle="modal" data-bs-target="#createService">
+          Criar Serviço
+          <i class="bi bi-plus"></i>
+        </button>
+
+        <div class="modal fade" id="createService" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Serviço</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Confirmar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-4">
+        <h2>Tabela de Serviços</h2>
+        <table class="table table-borderless table-hover">
+          <thead>
+            <tr>
+              <th>NOME</th>
+              <th>PREÇO</th>
+              <th>CATEGORIA</th>
+              <th>COMISSÃO</th>
+              <th class="actions"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Barba</td>
+              <td class="currency">R$14,00</td>
+              <td>Barba</td>
+              <td>50%</td>
+              <td class="actions">
+                <i class="bi bi-pen-fill"></i>
+                <i class="bi bi-trash-fill"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>Hidratação</td>
+              <td class="currency">R$25,00</td>
+              <td>Lavagem</td>
+              <td>50%</td>
+              <td class="actions">
+                <i class="bi bi-pen-fill"></i>
+                <i class="bi bi-trash-fill"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>Sobrancelha</td>
+              <td class="currency">R$10,00</td>
+              <td>Sobrancelha</td>
+              <td>50%</td>
+              <td class="actions">
+                <i class="bi bi-pen-fill"></i>
+                <i class="bi bi-trash-fill"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>Bigode</td>
+              <td class="currency">R$12,00</td>
+              <td>Bigode</td>
+              <td>50%</td>
+              <td class="actions">
+                <i class="bi bi-pen-fill"></i>
+                <i class="bi bi-trash-fill"></i>
+              </td>
+            </tr>
+            <tr>
+              <td>Pintura</td>
+              <td class="currency">R$28,00</td>
+              <td>Tintura</td>
+              <td>50%</td>
+              <td class="actions">
+                <i class="bi bi-pen-fill"></i>
+                <i class="bi bi-trash-fill"></i>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button type="button" class="btn-service" data-bs-toggle="modal" data-bs-target="#createService">
+        Próximo
+        <i class="bi bi-arrow-right"></i>
+      </button>
     </div>
-  </main>
-  <footer>
-    <p></p>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <div class="tab-pane fade" id="step2">
+      <!-- Conteúdo da Etapa 2 -->
+    </div>
+    <div class="tab-pane fade" id="step3">
+      <!-- Conteúdo da Etapa 3 -->
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>
