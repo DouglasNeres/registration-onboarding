@@ -13,12 +13,29 @@ html {
   padding: 60px;
 }
 
+.container {
+  margin: 0;
+  padding: 0;
+  max-width: -webkit-fill-available;
+  margin-top: 4rem !important;
+}
+
+a {
+  text-decoration: none;
+}
+
 p {
   margin: 0;
 }
 
 .nav-pills {
-  gap: 6rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.nav-pills .bi::before{
+  font-weight: bold !important;
 }
 
 .nav-pills .nav-link {
@@ -42,16 +59,16 @@ p {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  width: 150px;
+  width: 170px;
   border: none;
-  height: 40px;
   border-radius: 6px;
   background-color: var(--solid-background);
   color: #fff;
+  padding: 4px 8px;
+}
 
-  i {
-    font-size: larger;
-  }
+.btn-service i {
+  font-size: larger;
 }
 
 .icon {
@@ -83,6 +100,10 @@ p {
   transform: rotate(90deg);
 }
 
+select option:selected {
+  color: #ccc;
+}
+
 .container h2 {
   color: rgba(34, 48, 62, 0.9);
   font-size: 18px;
@@ -110,4 +131,16 @@ p {
 .actions i {
   margin-left: 0.5rem;
   cursor: pointer;
+}
+
+#step1 h2,
+#step2 h2,
+#step3 h2 {
+  font-size: 24px;
+}
+
+.btn-next {
+  display: flex;
+  justify-content: end;
+  margin-top: 5rem !important;
 }
