@@ -57,7 +57,7 @@
     <div class="tab-pane fade show active" id="step1">
       <h2 class="mt-5">Cadastrar Serviços</h2>
       <div class="row d-flex align-items-end mt-4">
-        <div class="col-2">
+        <div class="col-12 col-sm-6 col-xl-2">
           <label for="servicos" class="form-label">Selecionar categoria</label>
           <select class="form-select">
             <option selected disabled>Categoria</option>
@@ -67,7 +67,7 @@
           </select>
         </div>
 
-        <div class="col-8">
+        <div class="col-12 col-sm-6 col-xl-8">
           <label for="servicos" class="form-label">Selecionar serviços</label>
           <select class="form-select">
             <option selected disabled>Serviços</option>
@@ -76,11 +76,12 @@
             <option value="3">Three</option>
           </select>
         </div>
-
-        <button type="button" class="col-2 btn-service" data-bs-toggle="modal" data-bs-target="#createService">
-          Criar Serviço
-          <i class="bi bi-plus"></i>
-        </button>
+        <div class="col-12 col-md-12 col-xl-2">
+          <button type="button" class="btn-service" data-bs-toggle="modal" data-bs-target="#createService">
+            Criar Serviço
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
 
         <div class="modal fade" id="createService" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -102,69 +103,92 @@
       </div>
       <div class="container mt-4">
         <h2>Tabela de Serviços</h2>
-        <table class="table table-borderless table-hover">
-          <thead>
-            <tr>
-              <th>NOME</th>
-              <th>PREÇO</th>
-              <th>CATEGORIA</th>
-              <th>COMISSÃO</th>
-              <th class="actions"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Barba</td>
-              <td class="currency">R$14,00</td>
-              <td>Barba</td>
-              <td>50%</td>
-              <td class="actions">
-                <i class="bi bi-pen-fill"></i>
-                <i class="bi bi-trash-fill"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>Hidratação</td>
-              <td class="currency">R$25,00</td>
-              <td>Lavagem</td>
-              <td>50%</td>
-              <td class="actions">
-                <i class="bi bi-pen-fill"></i>
-                <i class="bi bi-trash-fill"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>Sobrancelha</td>
-              <td class="currency">R$10,00</td>
-              <td>Sobrancelha</td>
-              <td>50%</td>
-              <td class="actions">
-                <i class="bi bi-pen-fill"></i>
-                <i class="bi bi-trash-fill"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>Bigode</td>
-              <td class="currency">R$12,00</td>
-              <td>Bigode</td>
-              <td>50%</td>
-              <td class="actions">
-                <i class="bi bi-pen-fill"></i>
-                <i class="bi bi-trash-fill"></i>
-              </td>
-            </tr>
-            <tr>
-              <td>Pintura</td>
-              <td class="currency">R$28,00</td>
-              <td>Tintura</td>
-              <td>50%</td>
-              <td class="actions">
-                <i class="bi bi-pen-fill"></i>
-                <i class="bi bi-trash-fill"></i>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="table table-borderless table-hover">
+            <thead>
+              <tr>
+                <th class="actions-mobile d-none" id="mobile-th"></th>
+                <th>NOME</th>
+                <th>PREÇO</th>
+                <th>CATEGORIA</th>
+                <th>COMISSÃO</th>
+                <th class="actions"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="actions-mobile d-none">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+                <td data-label="NOME">Barba</td>
+                <td data-label="PREÇO" class="currency">R$14,00</td>
+                <td data-label="CATEGORIA">Barba</td>
+                <td data-label="COMISSÃO">50%</td>
+                <td class="actions">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="actions-mobile d-none">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+                <td data-label="NOME">Hidratação</td>
+                <td data-label="PREÇO" class="currency">R$25,00</td>
+                <td data-label="CATEGORIA">Lavagem</td>
+                <td data-label="COMISSÃO">50%</td>
+                <td class="actions">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="actions-mobile d-none">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+                <td data-label="NOME">Sobrancelha</td>
+                <td data-label="PREÇO" class="currency">R$10,00</td>
+                <td data-label="CATEGORIA">Sobrancelha</td>
+                <td data-label="COMISSÃO">50%</td>
+                <td class="actions">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="actions-mobile d-none">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+                <td data-label="NOME">Bigode</td>
+                <td data-label="PREÇO" class="currency">R$12,00</td>
+                <td data-label="CATEGORIA">Bigode</td>
+                <td data-label="COMISSÃO">50%</td>
+                <td class="actions">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="actions-mobile d-none">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+                <td data-label="NOME">Pintura</td>
+                <td data-label="PREÇO" class="currency">R$28,00</td>
+                <td data-label="CATEGORIA">Tintura</td>
+                <td data-label="COMISSÃO">50%</td>
+                <td class="actions">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="btn-next mt-5">
         <a class="btn-service" data-action="next">
@@ -173,14 +197,127 @@
       </div>
     </div>
     <div class="tab-pane fade" id="step2">
-      <!-- Conteúdo da Etapa 2 -->
-      <div class="d-flex align-items-center gap-3">
-        <a class="btn-service" data-action="prev">
-          <i class="bi bi-arrow-left"></i> Voltar
-        </a>
-        <a class="btn-service" data-action="next">
-          Próximo <i class="bi bi-arrow-right"></i>
-        </a>
+      <h2 class="mt-5">Cadastrar Profissionais</h2>
+      <div class="row d-flex align-items-end mt-4">
+        <div class="col-12 col-md-12 col-xl-2">
+          <button type="button" class="btn-service" data-bs-toggle="modal" data-bs-target="#createProfessional">
+            Criar Profissional
+            <i class="bi bi-plus"></i>
+          </button>
+        </div>
+
+        <div class="modal fade" id="createProfessional" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Profissional</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Confirmar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-4">
+        <h2>Tabela de Profissionais</h2>
+        <div class="table-responsive">
+          <table class="table table-borderless table-hover">
+            <thead>
+              <tr>
+                <th>NOME</th>
+                <th>PREÇO</th>
+                <th>CATEGORIA</th>
+                <th>COMISSÃO</th>
+                <th class="actions"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="">
+                  <img src="" alt="Imagem do Profissional" class="img-professional">
+                </td>
+                <td data-label="NOME">Barba</td>
+                <td data-label="PREÇO" class="currency">R$14,00</td>
+                <td data-label="CATEGORIA">Barba</td>
+                <td data-label="COMISSÃO">50%</td>
+                <td class="actions">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <img src="" alt="Imagem do Profissional" class="img-professional">
+                </td>
+                <td data-label="NOME">Hidratação</td>
+                <td data-label="PREÇO" class="currency">R$25,00</td>
+                <td data-label="CATEGORIA">Lavagem</td>
+                <td data-label="COMISSÃO">50%</td>
+                <td class="actions">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <img src="" alt="Imagem do Profissional" class="img-professional">
+                </td>
+                <td data-label="NOME">Sobrancelha</td>
+                <td data-label="PREÇO" class="currency">R$10,00</td>
+                <td data-label="CATEGORIA">Sobrancelha</td>
+                <td data-label="COMISSÃO">50%</td>
+                <td class="actions">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <img src="" alt="Imagem do Profissional" class="img-professional">
+                </td>
+                <td data-label="NOME">Bigode</td>
+                <td data-label="PREÇO" class="currency">R$12,00</td>
+                <td data-label="CATEGORIA">Bigode</td>
+                <td data-label="COMISSÃO">50%</td>
+                <td class="actions">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+              </tr>
+              <tr>
+                <td class="">
+                  <img src="" alt="Imagem do Profissional" class="img-professional">
+                </td>
+                <td data-label="NOME">Pintura</td>
+                <td data-label="PREÇO" class="currency">R$28,00</td>
+                <td data-label="CATEGORIA">Tintura</td>
+                <td data-label="COMISSÃO">50%</td>
+                <td class="actions">
+                  <i class="bi bi-pen-fill"></i>
+                  <i class="bi bi-trash-fill"></i>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="d-flex align-items-center justify-content-end gap-3">
+        <div class="btn-back">
+          <a class="btn-service" data-action="prev">
+            <i class="bi bi-arrow-left"></i> Voltar
+          </a>
+        </div>
+        <div class="btn-next">
+          <a class="btn-service" data-action="next">
+            Próximo <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
       </div>
     </div>
     <div class="tab-pane fade" id="step3">

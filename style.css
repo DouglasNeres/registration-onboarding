@@ -1,6 +1,8 @@
 :root {
   --default-background: #3E464C;
-  --solid-background: #22303E
+  --solid-background: #22303E;
+  --text-primary: rgba(34, 48, 62, 0.9);
+  --text-secondary:  rgba(34, 48, 62, 0.7)
 }
 
 * {
@@ -105,7 +107,7 @@ select option:selected {
 }
 
 .container h2 {
-  color: rgba(34, 48, 62, 0.9);
+  color: var(--text-primary);
   font-size: 18px;
   padding: 12px;
 }
@@ -113,7 +115,7 @@ select option:selected {
 .table th {
   text-align: left;
   font-weight: normal;
-  color: rgba(34, 48, 62, 0.9);
+  color: var(--text-primary);
   border-bottom: 1px solid #dee2e6;
   padding: 0.75rem;
 }
@@ -121,14 +123,18 @@ select option:selected {
 .table td {
   padding: 0.75rem;
   vertical-align: middle;
-  color: rgba(34, 48, 62, 0.7);
+  color: var(--text-secondary);
 }
 
 .actions {
   text-align: right;
 }
 
-.actions i {
+.actions-mobile {
+  text-align: left;
+}
+
+.actions i, .actions-mobile i {
   margin-left: 0.5rem;
   cursor: pointer;
 }
@@ -139,8 +145,33 @@ select option:selected {
   font-size: 24px;
 }
 
-.btn-next {
+.btn-back, .btn-next {
   display: flex;
   justify-content: end;
   margin-top: 5rem !important;
+}
+
+@media (max-width: 1200px) {
+  .btn-service {
+    width: 100%;
+    margin-top: 1.2rem !important;
+  }
+
+  .btn-next {
+    margin-top: 2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .actions-mobile {
+    display: flex !important;
+  }
+
+  #mobile-th {
+    display: table-cell !important;
+  }
+
+  .actions {
+    display: none;
+  }
 }
