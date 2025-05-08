@@ -2,7 +2,9 @@
   --default-background: #3E464C;
   --solid-background: #22303E;
   --text-primary: rgba(34, 48, 62, 0.9);
-  --text-secondary:  rgba(34, 48, 62, 0.7)
+  --text-secondary:  rgba(34, 48, 62, 0.7);
+  --secondary-light-bg: rgba(133, 146, 163, 0.16);
+  --secondary-primary-bg: rgba(133, 146, 163, 1);
 }
 
 * {
@@ -26,6 +28,10 @@ a {
   text-decoration: none;
 }
 
+a, button {
+  cursor: pointer;
+}
+
 p {
   margin: 0;
 }
@@ -33,7 +39,11 @@ p {
 .nav-pills {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 1rem;
+}
+
+.nav-link {
+  min-width: 18rem;
 }
 
 .nav-pills .bi::before{
@@ -56,20 +66,34 @@ p {
   }
 }
 
-.btn-service {
+.btn-primary {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  width: 170px;
   border: none;
   border-radius: 6px;
-  background-color: var(--solid-background);
-  color: #fff;
-  padding: 4px 8px;
+  padding: 4px 12px;
 }
 
-.btn-service i {
+.btn-primary.btn-prev {
+  background-color: var(--secondary-light-bg);
+  color: var(--secondary-primary-bg);
+  border: 1px solid var(--secondary-primary-bg);
+}
+
+.btn-primary.btn-prox {
+  background-color: var(--solid-background);
+  color: #fff;
+}
+
+.btn-primary.btn-create {
+  background-color: var(--solid-background);
+  color: #fff;
+  width: 190px;
+}
+
+.btn-primary i {
   font-size: larger;
 }
 
@@ -152,12 +176,12 @@ select option:selected {
 }
 
 @media (max-width: 1200px) {
-  .btn-service {
+  .btn-primary.btn-create {
     width: 100%;
     margin-top: 1.2rem !important;
   }
 
-  .btn-next {
+  .btn-next, .btn-back {
     margin-top: 2rem !important;
   }
 }
@@ -167,11 +191,44 @@ select option:selected {
     display: flex !important;
   }
 
+  .btn-back, .btn-next {
+    width: 100%;
+  }
+
+  .btn-primary.btn-prev, .btn-primary.btn-prox {
+    width: 100%;
+  }
+
+
   #mobile-th {
     display: table-cell !important;
   }
 
   .actions {
+    display: none;
+  }
+
+  .nav-pills {
+    justify-content: center;
+  }
+
+  #i1 {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 744px) {
+  #i2 {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 424px) {
+  .nav-link {
+    min-width: auto;
+  }
+
+  #i1, #i2, #i3 {
     display: none;
   }
 }
