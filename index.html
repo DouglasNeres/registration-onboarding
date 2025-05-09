@@ -93,12 +93,25 @@
         <div class="modal fade" id="createService" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-              <div class="modal-header">
+              <div class="modal-header d-flex flex-column gap-2">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Serviço</h1>
+                <p>Preencha os campos para o cadastro de novo serviço</p>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                ...
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Nome do serviço">
+                <label for="preco" class="form-label">Preço</label>
+                <input type="text" class="form-control" id="preco" placeholder="Preço">
+                <label for="categorias" class="form-label">Categorias</label>
+                <select class="form-select">
+                  <option selected disabled>Categorias</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+                <label for="comissao" class="form-label">Comissão</label>
+                <input type="text" class="form-control" id="comissao" placeholder="0,00%">
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
@@ -207,7 +220,8 @@
       <h2 class="mt-5">Cadastrar Profissionais</h2>
       <div class="row d-flex align-items-end mt-4">
         <div class="col-12 col-md-12 col-xl-2">
-          <button type="button" class="btn-primary btn-create" data-bs-toggle="modal" data-bs-target="#createProfessional">
+          <button type="button" class="btn-primary btn-create" data-bs-toggle="modal"
+            data-bs-target="#createProfessional">
             Criar Profissional
             <i class="bi bi-plus"></i>
           </button>
@@ -219,14 +233,72 @@
             <div class="modal-content">
               <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Cadastrar Profissional</h1>
+                <p>Preencha os campos para o cadastro de novo profissional</p>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                ...
-              </div>
+                <div class="form-avatar">
+                  <img src="assets/avatar-placeholder.png" alt="Avatar" />
+                  <div class="d-flex flex-column gap-1">
+                    <div class="avatar-buttons">
+                      <label class="btn-primary btn-prox" for="avatarUpload">Nova Foto</label>
+                      <input type="file" id="avatarUpload" accept="image/png, image/jpeg" hidden />
+                      <button class="btn-primary btn-prev">Limpar</button>
+                    </div>
+                    <small>Somente <strong>JPG</strong> e <strong>PNG</strong> são suportadas.<br />Tamanho máximo de
+                      <strong>800K</strong>.</small>
+                  </div>
+                </div>
+
+                <form class="form-grid">
+                  <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" placeholder="John" />
+                  </div>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="john.doe@example.com" />
+                  </div>
+                
+                  <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" />
+                  </div>
+                  <div class="form-group">
+                    <label>Contato</label>
+                    <input type="tel" placeholder="(99) 99999-9999" />
+                  </div>
+                
+                  <div class="form-group">
+                    <label>Nível de acesso</label>
+                    <select class="form-select">
+                      <option selected disabled>Nível</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Aniversário</label>
+                    <input type="text" placeholder="dd/mm/aaaa" />
+                  </div>
+                </form>
+                
+                <div class="form-options">
+                  <label><input type="checkbox" /> Permite Agendar Online</label>
+                  <label><input type="checkbox" /> Notificar via email novo agendamento online</label>
+                  <label><input type="checkbox" /> Ocultar dados cadastrais do cliente</label>
+                </div>
+                
+                <div class="form-radio">
+                  <label>Sexo</label>
+                  <label><input type="radio" name="sexo" /> M</label>
+                  <label><input type="radio" name="sexo" /> F</label>
+                </div>
+
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Confirmar</button>
+                <button class="btn btn-secondary">Cancelar</button>
+                <button class="btn btn-primary">Salvar</button>
               </div>
             </div>
           </div>

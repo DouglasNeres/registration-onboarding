@@ -2,7 +2,7 @@
   --default-background: #3E464C;
   --solid-background: #22303E;
   --text-primary: rgba(34, 48, 62, 0.9);
-  --text-secondary:  rgba(34, 48, 62, 0.7);
+  --text-secondary: rgba(34, 48, 62, 0.7);
   --secondary-light-bg: rgba(133, 146, 163, 0.16);
   --secondary-primary-bg: rgba(133, 146, 163, 1);
 }
@@ -28,7 +28,8 @@ a {
   text-decoration: none;
 }
 
-a, button {
+a,
+button {
   cursor: pointer;
 }
 
@@ -42,11 +43,7 @@ p {
   gap: 1rem;
 }
 
-.nav-link {
-  min-width: 18rem;
-}
-
-.nav-pills .bi::before{
+.nav-pills .bi::before {
   font-weight: bold !important;
 }
 
@@ -73,7 +70,7 @@ p {
   gap: 12px;
   border: none;
   border-radius: 6px;
-  padding: 4px 12px;
+  padding: 6px 12px;
 }
 
 .btn-primary.btn-prev {
@@ -91,10 +88,6 @@ p {
   background-color: var(--solid-background);
   color: #fff;
   width: 190px;
-}
-
-.btn-primary i {
-  font-size: larger;
 }
 
 .icon {
@@ -158,7 +151,8 @@ select option:selected {
   text-align: left;
 }
 
-.actions i, .actions-mobile i {
+.actions i,
+.actions-mobile i {
   margin-left: 0.5rem;
   cursor: pointer;
 }
@@ -169,11 +163,159 @@ select option:selected {
   font-size: 24px;
 }
 
-.btn-back, .btn-next {
+.btn-back,
+.btn-next {
   display: flex;
   justify-content: end;
   margin-top: 5rem !important;
 }
+
+input[type="file"] {
+  display: none;
+}
+
+label.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: var(--solid-background);
+  color: #fff !important;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.modal-dialog {
+  max-width: 60%;
+}
+
+.modal-content {
+  padding: 1.2rem 2.5rem;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: auto;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: none;
+}
+
+.modal-header h1 {
+  font-size: 20px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.modal-header p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.modal-header .btn-close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+.modal-body {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-body label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.modal-body input,
+.modal-body select {
+  padding: 10px 12px;
+  border: 1px solid var(--secondary-primary-bg);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text-primary);
+  background-color: #f9f9f9;
+}
+
+.modal-footer {
+  border-top: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #F2F4F7;
+  color: var(--text-primary);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+
+}
+
+.modal-footer .btn-primary {
+  background-color: var(--solid-background);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 32px;
+  max-width: 800px;
+  margin-bottom: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.form-avatar {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 24px;
+}
+
+.form-avatar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid var(--solid-background);
+  margin-bottom: 12px;
+}
+
+.avatar-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.form-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.form-radio {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 
 @media (max-width: 1200px) {
   .btn-primary.btn-create {
@@ -181,8 +323,39 @@ select option:selected {
     margin-top: 1.2rem !important;
   }
 
-  .btn-next, .btn-back {
+  .btn-next,
+  .btn-back {
     margin-top: 2rem !important;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-options {
+    gap: 0;
+  }
+
+}
+
+@media (max-width: 1042px) {
+  .nav-pills {
+    justify-content: space-between;
+  }
+
+  .conclused-step,
+  .conclused-step .nav-item,
+  .service-step .nav-item,
+  .professionals-step .nav-item {
+    width: 100%;
+  }
+
+  .professionals-step {
+    width: 50%;
+  }
+
+  .service-step {
+    width: 45%;
   }
 }
 
@@ -191,14 +364,28 @@ select option:selected {
     display: flex !important;
   }
 
-  .btn-back, .btn-next {
+  .nav-pills {
+    justify-content: center;
+  }
+
+  .btn-back,
+  .btn-next {
     width: 100%;
   }
 
-  .btn-primary.btn-prev, .btn-primary.btn-prox {
+  .btn-primary.btn-prev,
+  .btn-primary.btn-prox {
     width: 100%;
   }
 
+  .nav-pills p,
+  .nav-pills span {
+    display: none;
+  }
+
+  .nav-pills .icon {
+    gap: 0;
+  }
 
   #mobile-th {
     display: table-cell !important;
@@ -208,27 +395,82 @@ select option:selected {
     display: none;
   }
 
-  .nav-pills {
-    justify-content: center;
+  .conclused-step,
+  .conclused-step .nav-item,
+  .service-step .nav-item,
+  .professionals-step .nav-item {
+    width: auto;
   }
 
-  #i1 {
-    transform: rotate(90deg);
+  .professionals-step {
+    width: auto;
+  }
+
+  .service-step {
+    width: auto;
+  }
+
+  .modal-dialog {
+    max-width: 80%;
   }
 }
 
-@media (max-width: 744px) {
-  #i2 {
-    transform: rotate(90deg);
+@media (max-width: 575px) {
+  #createProfessional {
+    top: 0;
+    left: 0;
+    right: 0;
+    --bs-modal-margin: 1.75rem;
+  }
+
+  .modal-dialog {
+    max-width: 90%;
+  }
+
+  .form-avatar {
+    flex-direction: column;
   }
 }
 
-@media (max-width: 424px) {
-  .nav-link {
-    min-width: auto;
-  }
+@media (max-width: 475px) {
 
-  #i1, #i2, #i3 {
+  #i1,
+  #i2,
+  #i3 {
     display: none;
   }
+
+  .avatar-buttons {
+    flex-direction: column;
+  }
+
+  div small {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 381px) {
+  .modal-footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 375px) {
+  .nav-pills .nav-link {
+    padding: 8px;
+  }
+  .form-group {
+    max-width: 12rem;
+  }
+
+  .form-grid {
+    place-items: center;
+  }
+}
+
+@media (max-width: 320px) {
+  .form-group {
+    max-width: 10rem;
+  }
+  
 }
